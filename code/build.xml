@@ -1,0 +1,97 @@
+<project name="FopHttp095" default="package">
+  <property name="lib.dir" value="${basedir}/lib" />
+  <property name="src.dir" value="${basedir}/src" />
+  <property name="assemble.dir" value="${basedir}/assemble" />
+  <property name="obj.dir" value="${basedir}/obj" />
+  <property name="dist.dir" value="${basedir}/dist" />
+  <property name="test.lib.dir" value="${basedir}/testlib" />
+  <property name="test.src.dir" value="${basedir}/testsrc" />
+  <property name="test.obj.dir" value="${basedir}/testobj" />
+  <property name="test.rpt.dir" value="${basedir}/testrpt" />
+  <property name="install.dir" value="C:\Program Files\Apache\Tomcat 7.0\webapps" />
+
+  <path id="compile.classpath">
+    <fileset dir="${lib.dir}" includes="**/*.jar" />
+  </path>
+
+  <path id="compile.test.classpath">
+    <path refid="compile.classpath" />
+    <fileset dir="${test.lib.dir}" includes="**/*.jar" />
+    <pathelement path="${obj.dir}" />
+  </path>
+
+  <target name="compile">
+    <mkdir dir="${obj.dir}" />
+    <javac destdir="${obj.dir}"
+	   srcdir="${src.dir}/java"
+	   includeantruntime="false"
+	   debug="false"
+	   classpathref="compile.classpath">
+      <compilerarg value="-Xlint" />
+    </javac>
+  </target>
+
+  <target name="assemble" depends="compile">
+    <mkdir dir="${assemble.dir}" />
+    <copy file="${src.dir}/war/FopHttp095.xml" tofile="${assemble.dir}/WEB-INF/web.xml" />
+    <copy todir="${assemble.dir}/WEB-INF">
+      <fileset dir="${src.dir}/webinf">
+      </fileset>
+    </copy>
+    <copy todir="${assemble.dir}/WEB-INF/classes">
+      <fileset dir="${obj.dir}">
+      </fileset>
+    </copy>
+    <copy todir="${assemble.dir}/WEB-INF/lib">
+      <fileset dir="${lib.dir}">
+	<exclude name="servlet-api.jar" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="package" depends="assemble">
+    <mkdir dir="${dist.dir}" />
+    <jar destfile="${dist.dir}/fop.war"
+	 basedir="${assemble.dir}" />
+  </target>
+
+  <target name="compile-tests" depends="assemble">
+    <mkdir dir="${test.obj.dir}" />
+    <javac destdir="${test.obj.dir}"
+	   srcdir="${test.src.dir}"
+	   includeantruntime="false"
+	   debug="true"
+	   classpathref="compile.test.classpath">
+      <compilerarg value="-Xlint" />
+    </javac>
+  </target>
+
+  <target name="test" depends="compile-tests">
+    <mkdir dir="${test.rpt.dir}" />
+    <junit printsummary="yes">
+      <classpath>
+	<path refid="compile.test.classpath" />
+	<pathelement path="${test.obj.dir}" />
+      </classpath>
+      <batchtest fork="yes" todir="${test.rpt.dir}">
+	<fileset dir="${test.obj.dir}">
+	  <include name="**/*Test*.class" />
+	</fileset>
+	<formatter type="xml" />
+      </batchtest>
+    </junit>
+  </target>
+
+  <target name="clean">
+    <delete dir="${obj.dir}" />
+    <delete dir="${assemble.dir}" />
+    <delete dir="${dist.dir}" />
+    <delete dir="${test.obj.dir}" />
+    <delete dir="${test.rpt.dir}" />
+  </target>
+
+  <target name="install" depends="package">
+    <copy file="${dist.dir}/fop.war"
+          todir="${install.dir}" />
+  </target>
+</project>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE configuration SYSTEM "config.dtd">-->
+<!--
+     this file contains templates which allow an user easy
+     configuration of Fop. Actually normally you don't need this configuration
+     file, but if you need to change configuration, you should
+     always use this file and *not* config.xml.
+     Usage: java org.apache.fop.apps.Fop -c userconfig.xml -fo fo-file -pdf pdf-file
+-->
+
+<fop>
+  <!--
+************************************************************************
+  Add fonts here
+************************************************************************
+-->
+  <renderers>
+    <renderer mime="application/pdf">
+      <fonts>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/Tt0296m_.xml" embed-url="servlet-context:/WEB-INF/fonts/Tt0296m_.ttf" kerning="yes">
+          <font-triplet name="Morningstar 1 Light" style="normal" weight="normal"/>
+          <font-triplet name="Morningstar Light" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/Tt0300m_.xml" embed-url="servlet-context:/WEB-INF/fonts/Tt0300m_.ttf" kerning="yes">
+          <font-triplet name="Morningstar 1 Light" style="normal" weight="bold"/>
+          <font-triplet name="Morningstar Light" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/UniversLTStd-LightCn.xml" embed-url="servlet-context:/WEB-INF/fonts/UniversLTStd-LightCn.ttf" kerning="yes">
+          <font-triplet name="UniversLTStd-LightCn" style="normal" weight="normal"/>
+          <font-triplet name="UniversCond" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/UniversLTStd-BoldCn.xml" embed-url="servlet-context:/WEB-INF/fonts/UniversLTStd-BoldCn.ttf" kerning="yes">
+          <font-triplet name="UniversLTStd-LightCn" style="normal" weight="bold"/>
+          <font-triplet name="UniversCond" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/MstarSym.xml" embed-url="servlet-context:/WEB-INF/fonts/MstarSym.ttf" kerning="yes">
+          <font-triplet name="Morningstar Symbols One" style="normal" weight="normal"/>
+          <font-triplet name="Morningstar Symbols" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/UVCLO___.xml" embed-url="servlet-context:/WEB-INF/fonts/UVCLO___.ttf" kerning="yes">
+          <font-triplet name="UniversLTStd-LightCn" style="italic" weight="normal"/>
+          <font-triplet name="UniversCond" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/UVCBO___.xml" embed-url="servlet-context:/WEB-INF/fonts/UVCBO___.ttf" kerning="yes">
+          <font-triplet name="UniversLTStd-LightCn" style="italic" weight="bold"/>
+          <font-triplet name="UniversCond" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/simsun_Light.xml" embed-url="servlet-context:/WEB-INF/fonts/simsun_Light.ttf" kerning="yes">
+          <font-triplet name="simsun_Light" style="normal" weight="normal"/>
+          <font-triplet name="UniversCondzh" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/simsun_Italic.xml" embed-url="servlet-context:/WEB-INF/fonts/simsun_Italic.ttf" kerning="yes">
+          <font-triplet name="simsun_Italic" style="italic" weight="normal"/>
+          <font-triplet name="UniversCondzh" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/simsun_Bold.xml" embed-url="servlet-context:/WEB-INF/fonts/simsun_Bold.ttf" kerning="yes">
+          <font-triplet name="simsun_Bold" style="normal" weight="bold"/>
+          <font-triplet name="UniversCondzh" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/simsun_BoldItalic.xml" embed-url="servlet-context:/WEB-INF/fonts/simsun_BoldItalic.ttf" kerning="yes">
+          <font-triplet name="simsun_BoldItalic" style="italic" weight="bold"/>
+          <font-triplet name="UniversCondzh" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/times.xml" embed-url="servlet-context:/WEB-INF/fonts/times.ttf" kerning="yes">
+          <font-triplet name="times" style="normal" weight="normal"/>
+          <font-triplet name="Times" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/timesi.xml" embed-url="servlet-context:/WEB-INF/fonts/timesi.ttf" kerning="yes">
+          <font-triplet name="timesi" style="italic" weight="normal"/>
+          <font-triplet name="Times" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/timesbd.xml" embed-url="servlet-context:/WEB-INF/fonts/timesbd.ttf" kerning="yes">
+          <font-triplet name="timesbd" style="normal" weight="bold"/>
+          <font-triplet name="Times" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/timesbi.xml" embed-url="servlet-context:/WEB-INF/fonts/timesbi.ttf" kerning="yes">
+          <font-triplet name="timesbi" style="italic" weight="bold"/>
+          <font-triplet name="Times" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/TrebuchetMS.xml" embed-url="servlet-context:/WEB-INF/fonts/TrebuchetMS.ttf" kerning="yes">
+          <font-triplet name="TrebuchetMS" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/verdana.xml" embed-url="servlet-context:/WEB-INF/fonts/verdana.ttf" kerning="yes">
+          <font-triplet name="Verdana" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/verdanab.xml" embed-url="servlet-context:/WEB-INF/fonts/verdanab.ttf" kerning="yes">
+          <font-triplet name="Verdana" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/verdanai.xml" embed-url="servlet-context:/WEB-INF/fonts/verdanai.ttf" kerning="yes">
+          <font-triplet name="Verdana" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/verdanaz.xml" embed-url="servlet-context:/WEB-INF/fonts/verdanaz.ttf" kerning="yes">
+          <font-triplet name="Verdana" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/BOOKOS.xml" embed-url="servlet-context:/WEB-INF/fonts/BOOKOS.TTF" kerning="yes">
+          <font-triplet name="Bookman" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/BOOKOSB.xml" embed-url="servlet-context:/WEB-INF/fonts/BOOKOSB.TTF" kerning="yes">
+          <font-triplet name="Bookman" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/BOOKOSI.xml" embed-url="servlet-context:/WEB-INF/fonts/BOOKOSI.TTF" kerning="yes">
+          <font-triplet name="Bookman" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/BOOKOSBI.xml" embed-url="servlet-context:/WEB-INF/fonts/BOOKOSBI.TTF" kerning="yes">
+          <font-triplet name="Bookman" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/pala.xml" embed-url="servlet-context:/WEB-INF/fonts/pala.ttf" kerning="yes">
+          <font-triplet name="Palatino" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/palab.xml" embed-url="servlet-context:/WEB-INF/fonts/palab.ttf" kerning="yes">
+          <font-triplet name="Palatino" style="normal" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/palai.xml" embed-url="servlet-context:/WEB-INF/fonts/palai.ttf" kerning="yes">
+          <font-triplet name="Palatino" style="italic" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/palabi.xml" embed-url="servlet-context:/WEB-INF/fonts/palabi.ttf" kerning="yes">
+          <font-triplet name="Palatino" style="italic" weight="bold"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/arial.xml" embed-url="servlet-context:/WEB-INF/fonts/arial.ttf" kerning="yes">
+          <font-triplet name="Arial" style="normal" weight="normal"/>
+        </font>
+        <font metrics-url="servlet-context:/WEB-INF/fonts/arialbd.xml" embed-url="servlet-context:/WEB-INF/fonts/arialbd.ttf" kerning="yes">
+          <font-triplet name="Arial" style="normal" weight="bold"/>
+        </font>
+      </fonts>
+    </renderer>
+  </renderers>
+</fop>
+
+
+

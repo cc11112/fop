@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root font-family="UniversLTStd-LightCn" line-height="1.0" font-size="8pt" font-weight="normal" font-style="normal" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:svg="http://www.w3.org/2000/svg" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:math="http://exslt.org/math"  xmlns:funs="funs" xmlns:date="http://exslt.org/dates-and-times" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:fn="http://www.w3.org/2005/xpath-functions">
+  <!-- defines the layout master -->
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="first"
+            page-height="29.7cm"
+            page-width="21cm"
+            margin-top="1cm"
+            margin-bottom="2cm"
+            margin-left="2.5cm"
+            margin-right="2.5cm">
+      <fo:region-body margin-top="3cm"/>
+      <fo:region-before extent="3cm"/>
+      <fo:region-after extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <!-- starts actual layout -->
+  <fo:page-sequence master-reference="first">
+
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block>
+        <fo:instream-foreign-object>
+          <svg:svg xmlns="http://www.w3.org/2000/svg" width="500pt" height="40pt">
+            <g>
+              <text x="20" y="30" style="font-family: 'Univers 47 CondensedLight';" font-size="12pt">SVG Test here: The quick brown fox jumps over the lazy dog. 1234567890</text>
+            </g>
+          </svg:svg>
+        </fo:instream-foreign-object>
+      </fo:block>
+
+      <fo:block font-family="Univers 47 CondensedLight" font-size="12pt">
+        Univers 47 CondensedLight: The quick brown fox jumps over the lazy dog. 1234567890
+      </fo:block>
+
+      <fo:block font-family="UniversLTStd-LightCn" font-size="12pt">
+        UniversLTStd-LightCn: The quick brown fox jumps over the lazy dog. 1234567890
+      </fo:block>
+
+      <fo:block font-family="UniversLTStd-BoldCn" font-size="12pt" >
+        UniversLTStd-BoldCn: The quick brown fox jumps over the lazy dog. 1234567890
+      </fo:block>
+
+      <fo:block font-family="Univers-CondensedLightOblique" font-size="12pt" >
+        Univers-CondensedLightOblique: Jackdaws love my big sphinx of quartz. 1234567890
+      </fo:block>
+
+
+      <fo:block font-family="Univers-CondensedBoldOblique" font-size="12pt" >
+        Univers-CondensedBoldOblique: Jackdaws love my big sphinx of quartz. 1234567890
+      </fo:block>
+
+
+      <fo:block font-family="Morningstar 1 Light" font-size="12pt" >
+        Morningstar 1 Light: The quick brown fox jumps over the lazy dog. 1234567890
+      </fo:block>
+
+
+      <fo:block font-size="12pt" >
+        Morningstar Symbols One:
+        <fo:inline font-family="Morningstar Symbols One">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </fo:inline>
+      </fo:block>
+
+      <fo:block font-size="12pt" >
+        MorningstarSymbols:
+        <fo:inline font-family="MorningstarSymbols">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </fo:inline>
+      </fo:block>
+
+      <fo:block text-align="center" font-size="8pt" font-family="UniversLTStd-BoldCn"  background-color="rgb(178,178,178)" line-height="11pt">
+        <fo:inline vertical-align="sub">
+          Hello
+        </fo:inline>
+      </fo:block>
+
+      <fo:block padding-before="3pt" text-align="right" font-family="Morningstar 1 Light" font-size="13pt">
+        <fo:inline vertical-align="sub">
+          <fo:inline vertical-align="sub">&#x00DF;</fo:inline>
+        </fo:inline>
+        <fo:inline vertical-align="top" font-size="5pt">&#x00AE;</fo:inline>
+      </fo:block>
+
+      <fo:block text-align="center" font-size="8pt" font-family="UniversLTStd-BoldCn"  background-color="rgb(178,178,178)" line-height="11pt">
+        <fo:inline vertical-align="baseline">
+          Test text here
+        </fo:inline>
+      </fo:block>
+
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>
+
